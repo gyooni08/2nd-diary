@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{diary.title}}</h1>
+    <br>
+    <p>{{diary.body}}</p>
+    {% if diary.image %}
+    <p><img src="{{diary.image.url}}" alt=""></p>
+    {% endif %}
+    <a href="{%url 'edit' diary.id%}">수정하기</a>
+    <a href="{%url 'delete' diary.id%}">삭제하기</a>
+    <br> <br>
+    <a href="{%url 'index'%}">목차로 돌아가기🐱‍👤
+</a>
+
+{% endblock %}

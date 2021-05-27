@@ -1,0 +1,8 @@
+<h1>웰컴 회원가입🐱‍💻</h1>
+
+<form action="{% url 'signup' %}" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">회원가입</button>
+</form>
+<a href="{% url 'cover' %}">Home</a>

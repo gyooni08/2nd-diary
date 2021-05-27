@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+    <h1>🐱‍🚀일기장🐱‍👓</h1>
+    <h2>총 일기 개수: {{num}}</h2>
+    <div>
+        <a href="{%url 'index'%}">목차 보기</a>
+    </div>
+    {% endif %}
+
+    {% if not user.is_authenticated %}
+    <h1>로그인은 필수다냥😺</h1>
+    <a href="{% url 'login' %}">로그인</a>
+    <br>
+    <a href="{% url 'signup' %}">회원가입</a>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>수정하기</h3>
+<form action="{%url 'update' diary.id%}" method="post">
+    {%csrf_token%}
+    <p>제목 <input type="text" name="title" value="{{diary.title}}"></p>
+    본문 <br><br><textarea name="body" cols="50" rows="25">{{diary.body}}</textarea>
+    <button type="submit">작성하기</button>
+</form>
+<a href="{%url 'detail' diary.id%}">취소</a>
+
+{% endblock %}

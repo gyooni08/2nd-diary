@@ -1,0 +1,10 @@
+<h1>로그인은 필수다냥😺</h1>
+
+<form action="{% url 'login' %}" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">로그인</button>
+</form>
+<a href="{% url 'cover' %}">Home</a>
+<br>
+<a href="{% url 'signup' %}">회원가입</a>
